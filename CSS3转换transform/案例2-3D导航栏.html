@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D导航栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 对导航栏简单设置 */
+        nav {
+            width: 1000px;
+            height: 100px;
+            border: 2px solid pink;
+            border-radius: 20px;
+            margin: 100px auto;
+            text-align: center;
+            perspective: 4000px;
+        }
+
+        nav>div {
+            /* 设置成行内块元素可以更好的设置子盒子的位置 */
+            display: inline-block;
+            width: 150px;
+            height: 70px;
+            margin: 15px 20px;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* 给子盒子们开启立体空间 */
+            transform-style: preserve-3d;
+            /* 设置过渡 */
+            transition: all .4s;
+        }
+
+        /* 鼠标移上去时旋转 */
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+
+        .box div {
+            /* 子绝父相 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 70px;
+            font-size: 30px;
+            color: white;
+        }
+
+        .a1 {
+            background-color: blue;
+            transform: translateZ(35px);
+        }
+
+        .a2 {
+            background-color: crimson;
+            transform: translateY(35px) rotateX(-90deg);
+        }
+
+        /* 由于立体空间的原因 */
+        /* a1和a2 用如上的设置来写能够更好的实现想要的效果 */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <div class="box">
+                <div class="a1">嘤嘤嘤</div>
+                <div class="a2">嘿嘿嘿</div>
+            </div>
+        </div>
+        <div>
+            <div class="box">
+                <div class="a1">嘤嘤嘤</div>
+                <div class="a2">嘿嘿嘿</div>
+            </div>
+        </div>
+        <div>
+            <div class="box">
+                <div class="a1">嘤嘤嘤</div>
+                <div class="a2">嘿嘿嘿</div>
+            </div>
+        </div>
+        <div>
+            <div class="box">
+                <div class="a1">嘤嘤嘤</div>
+                <div class="a2">嘿嘿嘿</div>
+            </div>
+        </div>
+        <div>
+            <div class="box">
+                <div class="a1">嘤嘤嘤</div>
+                <div class="a2">嘿嘿嘿</div>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>

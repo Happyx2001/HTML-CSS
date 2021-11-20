@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增属性选择器</title>
+    <!-- PS：属性选择器权重为10 即 0，0，1，0 -->
+    <style>
+        /* 1,属性选择器： */
+        /* E[att] 选择具有att属性的E元素*/
+        /* 下面表示：必须是input同时里面有value属性，选择这个元素 */
+        input[value] {
+            color: aqua;
+        }
+
+        /* E[att=val] 选择具有att属性且属性值为val的E元素 */
+        /* 下面表示：
+        必须是input同时里面具有type属性且tpye=text，选择这个元素 */
+        input[type=text] {
+            background-color: aqua;
+        }
+
+        /* E[att^=val] 选择具有att属性且属性值以val开头的E元素 */
+        /* 下面表示：
+        必须是div同时里面具有class属性且属性值开头为icon，选择这个元素 */
+        div[class^=icon] {
+            color: red;
+            font-size: 20px;
+        }
+
+        /* E[att$=val] 选择具有att属性且属性值以val结尾的E元素 */
+        /* 下面表示：
+        必须是span同时里面具有class属性且属性值结尾为icon，选择这个元素 */
+        span[class$=icon] {
+            color: aqua;
+            font-size: 30px;
+        }
+
+        /* E[att*=val] 选择具有att属性且属性值含有val的E元素 */
+        /* 下面表示：
+        必须是sectiong同时里面具有class属性且属性值含有icon，选择这个元素 */
+        section[class*=icon] {
+            color: yellow;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1 -->
+    <input type="search" value="请输入信息">
+    <input type="search"><br>
+    <!-- 2 -->
+    <input type="text">
+    <input type="password">
+    <!-- 3 -->
+    <div class="icon1">1</div>
+    <div class="icon2">2</div>
+    <div class="icon3">3</div>
+    <div>4</div>
+    <!-- 4 -->
+    <span class="1icon">1</span>
+    <span class="2icon">2</span>
+    <span class="3icon">3</span>
+    <span>4</span>
+    <!-- 5 -->
+    <section class="1icon-data">4</section>
+    <section class="2icon-fly">5</section>
+    <section class="3icon-bear">6</section>
+    <section class="bear">7</section>
+</body>
+
+</html>

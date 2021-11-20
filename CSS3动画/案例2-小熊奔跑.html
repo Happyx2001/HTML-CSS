@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画练习案例</title>
+    <!-- 小熊奔跑 -->
+    <!-- /* 运用精灵图与steps()制作动画 */ -->
+    <style>
+        body {
+            position: relative;
+            background-color: #ccc;
+        }
+
+        .box {
+            position: absolute;
+            top: 200px;
+            width: 200px;
+            height: 100px;
+            border: 1px solid white;
+            /* 调用精灵图 */
+            background: url(bear.png) no-repeat;
+            /* 同时调用多个动画,需要简写 并且不同动画的属性组用","逗号隔开 */
+            animation: bear 0.2s steps(8) infinite, move 2s linear forwards;
+            /* bear动画:运行一次需要1s, 分成steps(8)八部份, 无限循环 */
+            /* move动画:运行一次2s, 匀速播放, 结束时保持结束状态 */
+        }
+
+
+        /* 用step规定出现的图片,相当于一帧一帧*/
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1600px 0;
+            }
+
+        }
+
+        /* 设置让小熊跑到屏幕中间并定住的动画 */
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

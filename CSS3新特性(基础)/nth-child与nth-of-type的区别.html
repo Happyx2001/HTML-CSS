@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>区别</title>
+    <style>
+        .box div:nth-child(1) {
+            color: red;
+        }
+
+        .box2 div:nth-of-type(1) {
+            color: red;
+        }
+
+        /* 1,:nth-child(1) */
+        /* 是先找第1个子元素，然后再看是否和div匹配 */
+        /* box1中第一个子元素为<p>不是<div> 因此选择器失效 */
+        /* 2,:nth-of-type(1) */
+        /* 是先找与div匹配的元素，然后找寻其中第1个子元素 */
+        /* box2中第一个div子元素为2，因此选择器成功 */
+    </style>
+</head>
+
+<body>
+    <section class="box1">
+        <p>1</p>
+        <div>2</div>
+        <div>3</div>
+    </section>
+    <section class="box2">
+        <p>1</p>
+        <div>2</div>
+        <div>3</div>
+    </section>
+</body>
+
+</html>

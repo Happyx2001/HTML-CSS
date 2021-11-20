@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更改用户界面样式</title>
+    <style>
+        /* 1，更改鼠标样式 */
+        /* 鼠标样式：鼠标移动到元素上时的样式 */
+        li {
+            list-style: none;
+        }
+
+        .a1 {
+            /* 鼠标小白样式 */
+            cursor: default;
+        }
+
+        .a2 {
+            /* 鼠标小手样式 */
+            cursor: pointer;
+        }
+
+        .a3 {
+            /* 鼠标移动样式 */
+            cursor: move;
+        }
+
+        .a4 {
+            /* 鼠标文本样式 */
+            cursor: text;
+        }
+
+        .a5 {
+            /* 鼠标禁止样式 */
+            cursor: not-allowed;
+        }
+
+        /* 2，修改表单轮廓 */
+        /* 默认表单会有个带有颜色的轮廓，有时候需要消去 */
+        .b {
+            outline: none;
+            /* 或者outline: 0; */
+        }
+
+        /* 3，修改表单域拖拽 */
+        /* 表单域默认可以拖拽,一般需要消去 */
+        .c {
+            resize: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 鼠标样式 -->
+    <ul>
+        <li class="a1">这是小白样式！</li>
+        <li class="a2">这是小手样式！</li>
+        <li class="a3">这是移动样式！</li>
+        <li class="a4">这是文本样式！</li>
+        <li class="a5">这是禁止样式！</li>
+    </ul>
+    <!-- 表单轮廓 -->
+    <!-- 修改前 -->
+    <input type="text">
+    <!-- 修改后 -->
+    <input type="text" class="b">
+    <!-- 表单域拖拽 -->
+    <!-- 修改前 -->
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <!-- 修改后 -->
+    <textarea class="c" name="" id="" cols="30" rows="10"></textarea>
+
+</body>
+
+</html>

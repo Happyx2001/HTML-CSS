@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3动画</title>
+    <!-- CSS3制作动画分两步:
+        1,定义动画  
+        2,调用动画 -->
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: pink;
+            /*2.1, 调用动画 */
+            animation-name: move;
+            /*2.2, 持续时间 */
+            animation-duration: 2s;
+        }
+
+        /* 1,定义动画 */
+        @keyframes move {
+
+            /* 0%表示开始状态 可以用 from*/
+            0% {
+                width: 300px;
+            }
+
+            /* 100%表示结束状态  可以用to ( from  to得一起使用)*/
+            100% {
+                width: 500px;
+            }
+
+            /* 0%与100%直接可以继续添加状态,制作多状态动画 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 1000px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        /*  静态定位只需要了解 */
+        /*  1，相对定位  
+        相对定位会继续保留原来的位置，即：不会脱标*/
+
+        .box1 {
+            /* 相对定位 对上50px 对左50px*/
+            position: relative;
+            top: 50px;
+            left: 50px;
+            background-color: aqua;
+        }
+
+        /* 2，绝对定位 */
+        /* 相对与自己的祖先元素来说的 */
+        /* 绝对定位不会继续保留原来的位置，即：脱标 */
+        /* box3是box4的父元素且是相对定位，因此box4相对box3移动 */
+        /* ！子绝父相！意思是子元素是绝对定位，父元素就得是相对定位 */
+        .box3 {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .box4 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background-color: aqua;
+        }
+
+        /* 3，固定定位  */
+        /* 固定在浏览器可视窗口的位置 */
+        /* 滚动浏览器的时候不会发生位置改变 */
+        .box5 {
+            position: fixed;
+            top: 50px;
+            right: 0;
+            width: 50px;
+            height: 100px;
+        }
+
+        /* ps:定位叠放的次序 */
+        /* z-index : z轴的大小 */
+        /* 数值越大，盒子越靠上 */
+        .box6 {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            margin-left: -150px;
+            background-color: red;
+            z-index: 3;
+        }
+
+        .box7 {
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            margin-left: -100px;
+            background-color: aquamarine;
+            z-index: 2;
+        }
+
+        .box8 {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            margin-left: -50px;
+            background-color: cornflowerblue;
+            z-index: 5;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="box1">1<br>
+        position:relative;<br>
+        top:50px;<br>
+        left:50px;
+    </div>
+    <div class="box2">2</div>
+    <div class="box3">3
+        <div class="box4">4</div>
+    </div>
+    <div class="box5">5,按俺不会动的哦</div>
+    <div class="box6">6</div>
+    <div class="box7">7</div>
+    <div class="box8">8</div>
+</body>
+
+</html>

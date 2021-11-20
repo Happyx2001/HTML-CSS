@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css三大特性</title>
+    <!-- CSS三大特性：层叠性、继承性、优先级 -->
+
+    <style>
+        div {
+            color: red;
+            font-size: 20px;
+        }
+
+        div {
+            color: aqua;
+            font-size: 20px;
+        }
+
+        /* 特性1,层叠性:  */
+        /*由于 div{color: aqua;}距离结构比较近,因此执行 */
+        /*特性2, 继承性:
+        子标签会继承父标签的部分样式 */
+        /* 如:text-,font-,line- 这些元素开头的可被继承,还有color */
+
+        /* 特性3,优先级: */
+        /* 每种选择器都有着权重,复合选择器会有权重叠加 
+        权重比较如下:
+        继承或者 * < 标签选择器 < 类选择器,伪类选择器 
+        < ID选择器 < 行内选择器 < !important重要的 */
+        .nav .a1 {
+            color: black;
+        }
+
+        ul .a1 {
+            color: yellow;
+            /* 因为ul .a1的权重小于 .nav .a1因此执行的是.nav .a1 */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="nav">
+            <li class="a1">待到秋来九月八</li>
+            <li class="a2">我花开后百花杀</li>
+            <li class="a3">冲天香阵透长安</li>
+            <li class="a4">满城尽带黄金甲</li>
+        </ul>
+    </div>
+
+
+
+
+</body>
+
+</html>

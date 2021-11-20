@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D转换-旋转</title>
+    <style>
+        div {
+            float: left;
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            margin: 100px 100px 0 100px;
+        }
+
+        /* 2,位移: transfrom: ratate(度数)   度数的单位为deg */
+        .box1 {
+            background-color: aqua;
+            transform: rotate(45deg);
+            /* 特点1,度数为正值时,顺时针旋转; 度数为负值时,逆时针旋转; */
+            /*     2,默认的旋转中心为元素的中心点 */
+            /*     3,不会影响其他元素的位置 */
+        }
+
+        .box3,
+        .box4 {
+            background-color: yellow;
+            transition: all 1s;
+        }
+
+        /* 搭配:hover, transition使用  */
+        /* 鼠标放上去时,元素旋转360° */
+        .box3:hover {
+            transform: rotate(360deg);
+        }
+
+        /* PS: 可以设置转换中心点 */
+        /* tranform-origin: x y ;  (默认为元素的中心点)*/
+        .box4 {
+            transform-origin: 10px 10px;
+            /* 设置转换中心点为10px 10px */
+        }
+
+        .box4:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">我转起来了</div>
+    <div class="box2">我不会转</div>
+    <div class="box3">我也转起来了</div>
+    <div class="box4">设置完转换中心点之后</div>
+</body>
+
+</html>

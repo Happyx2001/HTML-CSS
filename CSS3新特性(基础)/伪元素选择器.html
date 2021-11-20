@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器</title>
+    <!-- ::before 在父盒子前面插入一个元素 -->
+    <!-- ::after 在父盒子后面插入一个元素 -->
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 10px;
+        }
+
+        div::before {
+            content: "这是";
+            /* content 是伪元素选择器必须写的属性 */
+            color: red;
+        }
+
+        div::after {
+            content: "你懂了吗？";
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        伪元素选择器
+    </div>
+</body>
+
+</html>

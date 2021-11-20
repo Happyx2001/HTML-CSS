@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3过渡</title>
+    <!-- 过渡是CSS3非常重要的新特性，务必掌握！ -->
+    <!-- 一般与:hover搭配使用 -->
+    <style>
+        /* transition: 要过渡的属性 花费时间 运动曲线 何时开始; */
+        /* (必写)1，要过渡的属性：想要变化的CSS属性，高宽、颜色、背景、内外边距等等 */
+        /* 选取全部属性可以用 all ，多个属性用“,”隔开 */
+        /* (必写)2，花费时间：单位为秒(s)，例如：1s */
+        /* (可省略)3，运动曲线：默认为ease(逐渐变慢) */
+        /* (可省略)4，何时开始：延迟触发，单位为秒(s)，默认为0s */
+
+        /* eg1： */
+        .box1 {
+            width: 800px;
+            height: 300px;
+            background-color: red;
+            /* 变化的属性是width，变化时间1s，运动曲线 逐渐变慢，何时开始0s */
+            transition: width 1s ease 0s;
+            margin: 100px auto;
+        }
+
+        .box1:hover {
+            width: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+</body>
+
+</html>

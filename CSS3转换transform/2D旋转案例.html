@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转案例</title>
+    <style>
+        div {
+            float: left;
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            margin: 100px 10px;
+            overflow: hidden;
+            background-color: bisque;
+
+        }
+
+        div::after {
+            display: block;
+            width: 100%;
+            height: 100%;
+            /* 伪元素选择器必写conten='' */
+            content: '猜猜我下面有什么';
+            background-color: aqua;
+            transform-origin: 0px 100%;
+            transition: all 1s;
+            transform: rotate(0deg);
+        }
+
+        /* 设置当鼠标移到div时,开始旋转 */
+        div:hover::after {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+
+</html>

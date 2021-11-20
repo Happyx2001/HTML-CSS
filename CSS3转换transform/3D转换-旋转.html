@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D转换-旋转</title>
+    <!-- transform:rotateX(x) -->
+    <!-- X轴正方向旋转x° -->
+
+    <!-- transform:rotateY(y) -->
+    <!-- Y轴正方向旋转y° -->
+
+    <!-- transform:rotateZ(z) -->
+    <!-- Z轴正方向旋转z° -->
+
+    <!-- transform:rotate3d(x,y,z,deg) -->
+    <!-- 自定义轴旋转deg度 -->
+    <!-- eg1: transform:rotate3d(1,0,0,45deg) -->
+    <!-- 表示绕x轴旋转45deg -->
+    <!-- eg2: transform:rotate3d(1,1,0,45deg) -->
+    <!-- 表示绕对角线旋转45deg -->
+
+    <!-- 旋转左手定理: 
+        左手大拇指指向轴的方向, 其余手指弯曲的方向就是旋转的正方向 -->
+
+    <style>
+        /* 添加透视才能使得网页元素有着立体感,3D感 */
+        /* 单位为像素(px) */
+
+        body {
+            perspective: 240px;
+        }
+
+        img {
+            /* img为行内元素,须转换为块元素方便操作 */
+            display: block;
+            width: 300px;
+            background-color: pink;
+            margin: 50px auto;
+            /* 添加过渡,使得效果更平滑 */
+            transition: all 1s;
+        }
+
+        /* 设置鼠标放上去时,运行旋转 */
+        .img1:hover {
+            /* 让其绕x轴正方向旋转360° */
+            transform: rotateX(360deg);
+        }
+
+        /* 设置鼠标放上去时,运行旋转 */
+        .img2:hover {
+            /* 让其绕y轴正方向旋转360° */
+            transform: rotateY(360deg);
+        }
+
+        /* 设置鼠标放上去时,运行旋转 */
+        .img3:hover {
+            /* 让其绕z轴正方向旋转360° */
+            transform: rotateZ(360deg);
+        }
+
+        /* 设置鼠标放上去时,运行旋转 */
+        .img4:hover {
+            /* 让其绕对角线正方向旋转360° */
+            transform: rotate3d(1, 1, 0, 360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../HTML基础标签/images/wall2.png" alt="" class="img1">
+    <img src="../HTML基础标签/images/wall1.png" alt="" class="img2">
+    <img src="../HTML基础标签/images/wall3.png" alt="" class="img3">
+    <img src="../HTML基础标签/images/wall1.png" alt="" class="img4">
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <!-- 浮动元素不会占用原先的位置,有时会对后面的布局产生影响 -->
+    <!-- 因此有时需要消除浮动 -->
+    <!-- (使得子盒子可以撑开父盒子) -->
+    <style>
+        /* 范例一:  */
+        /* 下面这种情况,父盒子.bbox不会被子盒子.box1 .box2撑开 */
+        .bbox {
+            width: 800px;
+            border: 2px solid red;
+            margin: 0 auto;
+        }
+
+        .bbox div {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: aqua;
+            margin-right: 10px;
+        }
+
+        /* 因此需要"消除浮动" */
+        .fbox {
+            width: 800px;
+            border: 2px solid red;
+            margin: 500px auto;
+            margin-bottom: 100px;
+            /* 方法1,父盒子添加如下代码 */
+            overflow: hidden;
+        }
+
+        .fbox div {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: aqua;
+            margin-right: 10px;
+        }
+
+        /* 方法2 */
+        /* 复制粘贴法! */
+        /* 将需要消除浮动盒子的父盒子添加class选择器: .clearfix */
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        /* 下面两行是为了照顾低级浏览器 */
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .kbox {
+            width: 800px;
+            border: 2px solid red;
+            margin: 0 auto;
+        }
+
+        .kbox div {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: aqua;
+            margin-right: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bbox">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+    </div>
+    <div class="fbox">
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+    </div>
+    <div class="kbox clearfix">
+        <div class="box5">box5</div>
+        <div class="box6">box6</div>
+    </div>
+</body>
+
+</html>

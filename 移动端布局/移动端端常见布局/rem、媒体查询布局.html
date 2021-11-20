@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem、媒体查询适配布局</title>
+    <style>
+        /* rem基础
+        rem (root em) 是一个相对单位, 类似于em, em是父元素字体大小
+        rem 则是相对于html元素的字体大小
+        rem 的优点: 可以通过修改html里面的文字大小来改变页面中元素的大小可以整体控制
+         */
+
+        /* Media Query 媒体查询
+        媒体查询可以根据不同的屏幕尺寸改变不同的样式
+        语法:
+        @media mediatype and | not | only (media feature) {
+            CSS-Code;
+        }
+        (1): @media 开头  @符号必加
+        (2): mediatype 媒体类型: 
+            all: 用于所以设备
+            print: 用于打印机和打印预览
+            screen: 用于电脑屏幕, 平板电脑, 智能手机等   
+        (3): 关键字 and not only
+            and: 可以将多个媒体特性连接到一起, 相对于 "且"
+            not: 排除某个媒体类型, 相对于 "非", 可以省略
+            only: 指定某个特定的媒体类型, 可以省略
+        (4): media feature 媒体特性 必须有小括号包括
+            width: 定义输出设备中页面的可见区域宽度
+            min-width: 定义输出设备中页面的最小可见区域宽度
+            max-width: 定义输出设备中页面的最大可见区域宽度
+            
+             */
+        @media screen and (max-width: 800px) {
+
+            /* 意思是: 在我们屏幕上 并且 最大的宽度是 800px 设置我们想要的样式 */
+            body {
+                background-color: aqua;
+            }
+
+            html {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+
+            /* 意思是: 在我们屏幕上 并且 最大的宽度是 600px 设置我们想要的样式 */
+            body {
+                background-color: yellow;
+            }
+
+            html {
+                font-size: 30px;
+            }
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .box1 {
+            font-size: 12px;
+        }
+
+        .t1 {
+            /* 1. em 相对于父元素 box1 的字体大小 font-size */
+            width: 10em;
+            height: 10em;
+            background-color: red;
+        }
+
+        .t2 {
+            /* 2. rem 则是相对于 html 元素的字体大小, 与父元素没有关系 */
+            width: 10rem;
+            height: 10rem;
+            background-color: pink;
+        }
+
+        .b {
+            /* 结合 rem 和 媒体查询
+            让 字体 和 背景大小 随着窗口宽度而改变 */
+            width: 100%;
+            height: 5rem;
+            font-size: 3rem;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="b">我是标题</div>
+    <div class="box1">
+        <p class="t1">123</p>
+        <p class="t2">456</p>
+    </div>
+</body>
+
+</html>

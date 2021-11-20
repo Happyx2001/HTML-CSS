@@ -1,0 +1,38 @@
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.box2 {
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.box2 a {
+  color: red;
+}
+.box2 .a1,
+.box2 .a2 {
+  color: blue;
+}
+.a2 {
+  font-size: 20px;
+}
+.a2:hover {
+  color: red;
+}
+.box2::after {
+  content: "Less嵌套文字4";
+  color: black;
+}
+.box3 {
+  width: 400px;
+  height: 600px;
+  border: 14px aqua solid;
+  color: pink;
+  background-color: gray;
+}

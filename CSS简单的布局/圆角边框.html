@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        span {
+            width: 200px;
+            height: 200px;
+        }
+
+        .box1 {
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .box2 {
+            width: 400px;
+            background-color: blue;
+            border-radius: 100px;
+        }
+
+        .box3 {
+            width: 400px;
+            height: 250px;
+            background-color: black;
+            border-radius: 100px;
+        }
+
+        .box4 {
+            background-color: gray;
+            border-radius: 25px 50px 75px 100px;
+            /* border-radius复合写法：左上 右上 右上 左下 */
+        }
+
+        .box5    {
+            background-color: gray;
+            border-top-left-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>1、圆形</p>
+    <div class="box1"></div>
+    <p>2、椭圆矩形</p>
+    <div class="box2"></div>
+    <br>
+    <div class="box3"></div>
+    <p>3、边角不同框</p>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+
+</html>

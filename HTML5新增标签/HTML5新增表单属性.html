@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增表单属性</title>
+    <style>
+        /* ps:下面这种方法可以修改input里的placeholder值 */
+        input::placeholder {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <ul>
+            <li>
+                <!-- required="required"表示填写的内容不能为空，必须填写 -->
+                <input type="search" required="required">
+            </li>
+            <li>
+                <!-- placeholder="" 表单的提示信息 -->
+                <!-- 即未输入信息之前，显示的信息。输入信息，自动消失 -->
+                <input type="search" placeholder="请输入搜索物">
+            </li>
+            <li>
+                <!-- autofocus表单的自动聚焦 -->
+                <!-- 可以直接选定这个搜索框 -->
+                <input type="search" required="required" placeholder="请输入搜索物" autofocus="autofocus">
+            </li>
+            <li>
+                <!-- autocomplete="on" 可以显示之前提交过的内容 -->
+                <!-- 需要加上name值，并且成功提交 -->
+                <!-- 类似于历史记录 -->
+                <input type="search" name="search" autocomplete="on">
+            </li>
+            <li>
+                <!-- multiple表示可以多选文件提交 -->
+                <!-- 一般与文件域一起使用 -->
+                <input type="file" multiple>
+            </li>
+            <li><input type="submit" value="提交"></li>
+        </ul>
+    </form>
+</body>
+
+</html>

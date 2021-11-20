@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景实验</title>
+    <style>
+        body {
+            /* 背景颜色  transparent表示透明*/
+            background-color: transparent;
+            /* 背景图片平铺   no-repea表示不平铺*/
+            background-repeat: no-repeat;
+            /* 背景图片位置 👇 top center表示图片靠上居中*/
+            background-position: top center;
+            /* 背景图片固定 👇 fixde 图片固定*/
+            background-attachment: fixed;
+            /* 背景图片地址👇 */
+            background-image: url(images/wall1.png);
+            /* 背景图片大小 */
+            /* background-size: 图片的宽度 图片的高度; */
+            /* 1. 只有一个参数必定是 宽度 ，高度会等比缩放*/
+            /* 2. 里面的单位可以是 % ，% 相对于父盒子 */
+            /* 3. cover 等比例拉伸：通过缩放 完全覆盖父盒子，但可能有部分背景图片显示不全 */
+            /* 4. contain 高度和宽度等比例拉伸：当宽度或者高度铺满父盒子就不再拉伸，但可能有部分空白区域 */
+
+        }
+
+        /* div {
+            background-color: blue;
+            width: 200px;
+            height: 30px;
+            margin: 0 auto 布局居中 布局中学 
+        }
+        */
+
+        span {
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+        }
+
+        .a1 {
+            /* 图片平铺的情况 */
+            /* 平铺会把盒子给铺满 */
+            /* repeat表示背景图片会从x、y方向把背景铺满 */
+            background-repeat: repeat;
+            /* 设置背景颜色为white */
+            background-color: white;
+            background-image: url(images/icon.png);
+        }
+
+        .a2 {
+            /* 图片不平铺的情况 no-repeat*/
+            background-repeat: no-repeat;
+            background-color: white;
+            background-image: url(images/icon.png);
+            /* 图片垂直居中如下 */
+            background-position: center;
+        }
+
+        .a3 {
+            /* 背景颜色半透明：r、g、b、a：一一对应，a取值范围为0~1 */
+            background: rgba(0, 0, 0, 0.5)
+        }
+    </style>
+</head>
+
+<body>
+    <span class="a1">
+    </span>
+    <span class="a2"></span>
+    <br />
+    <span class="a3"></span>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字围绕浮动元素</title>
+    <!-- 文字会围绕着浮动元素进行显示 -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 400px;
+            background-color: pink;
+            margin: 0 auto;
+            padding: 5px;
+            overflow: hidden;
+        }
+
+        .a1 {
+            float: left;
+            width: 200px;
+        }
+
+        .a2 {
+            width: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <!-- 文字会围绕着浮动元素进行显示 -->
+        <img src="../HTML基础标签/images/wall1.png" alt="" class="a1">
+        <p>锄禾日当午,汗滴禾下土.谁吃盘中餐,粒粒皆辛苦.锄禾日当午,汗滴禾下土.</p>
+        文字会围绕着浮动元素进行显示
+    </div>
+    <br>
+    <div>
+        <!-- 文字会换行显示 -->
+        <img src="../HTML基础标签/images/wall1.png" alt="" class="a2">
+        <p>锄禾日当午,汗滴禾下土.谁吃盘中餐,粒粒皆辛苦.锄禾日当午,汗滴禾下土.</p>
+        文字会换行显示
+    </div>
+</body>
+
+</html>

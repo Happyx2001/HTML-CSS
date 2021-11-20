@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D转换-缩放</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 100px auto;
+            transition: all 1s;
+        }
+
+        /* 3,缩放: transform: scale(x, y);  */
+        /* 特点1,不会影响其他盒子的位置,且可以设置转换中心点*/
+        /*     2,scale()里面写数字不跟单位,就是倍数的意思 */
+        /* scale(2, 2)表示高宽扩大2倍 */
+        .box1:hover {
+            transform: scale(2, 2);
+        }
+
+        /* scale(0.5, 0.5)表示高宽缩小1倍 */
+        .box2:hover {
+            transform: scale(0.5, 0.5);
+        }
+
+        /* 如果scale()里面只写一个值,则第二个值也相同 */
+        /* scale(2)等价于scale(2, 2) */
+        .box3:hover {
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">我是放大两倍scale(2, 2)</div>
+    <div class="box2">我是缩小一倍scale(0.5, 0.5)</div>
+    <div class="box3">我是放大两倍scale(2)</div>
+</body>
+
+</html>

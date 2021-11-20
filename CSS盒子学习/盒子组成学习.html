@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子学习!</title>
+    <!-- border:边框   padding:内边距   margin:外边距 -->
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        /* 1,border : 边框  */
+        .box1 {
+            /* border边框:宽度,颜色,样式  (复合写法)↓*/
+            border: 20px black solid;
+            /* 边框宽度为20px,颜色为black,样式为实线 */
+        }
+
+        /* 2,padding : 内边距 */
+        .box2 .sbox {
+            /* 100%继承了.box2的宽度 */
+            width: 100%;
+            /* 内边距的上下左右都为20px */
+            padding: 20px;
+            margin: 0;
+            color: white;
+        }
+
+        /* 3,margin : 外边距 */
+        .box3 {
+            /* 外边距全auto使得盒子可以水平居中 */
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        这是个带边框的盒子
+    </div>
+    <div class="box2">
+        <div class="sbox">
+        </div>
+    </div>
+    <div class="box3">
+        这是个会居中的盒子
+    </div>
+    <br>
+    <img src="盒子组成.png" alt="">
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            margin: 0 10px;
+        }
+
+        /* float */
+        /* 1，添加了浮动的盒子或脱离标准流（脱标） */
+        /* 2，浮动的盒子不再保留之前的位置，
+        且浮动的盒子只影响后面的标准流盒子，不影响前面的标准流盒子 */
+        /* 3，若给多个盒子添加浮动，则会按照属性值，于一行内显示并且顶端对其排列 */
+        div {
+            /* left左浮动，right右浮动，none不浮动 */
+            float: left;
+        }
+
+        /* 注意点: */
+        /* 1,浮动的盒子应该与标准流的父盒子搭配 */
+        /* (用标准流的父盒子上下排列顺序,内部用子盒子采取浮动左右排列) */
+        /* 2,若一个元素浮动,其兄弟元素也应该浮动 */
+    </style>
+</head>
+
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+</body>
+
+</html>

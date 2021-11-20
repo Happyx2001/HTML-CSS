@@ -1,0 +1,62 @@
+// 1. Less定义变量
+// @变量名: 值
+// 定义一个 粉色的变量 
+@color1: pink;
+@color2: aqua;   // aqua
+@color3: red;    // red
+// 定义一个 字体为14px的变量
+@font14: 14px;
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    background-color: @color1;
+    font-size: @font14;
+    margin-bottom: 10px;
+}
+
+// 2. Less的编译 ——> easy less 插件使用
+// 保存Less文件时，会自动生成、修改对应的CSS文件
+
+// 3. Less嵌套
+// (1) 子元素的样式直接写到父元素样式里面
+.box2 {
+    width: 200px;
+    height: 200px;
+    background-color: @color2;
+    font-size: @font14;
+    a {
+        color: @color3;
+    }
+    .a1,
+    .a2 {
+        color: blue;
+    }
+    margin-bottom: 10px;
+}
+// (2) 如果是 交集, 伪类, 伪元素选择器 则在前面添加 &
+.a2 {
+    font-size: 20px;
+    &:hover {
+        color: red;
+    }
+}
+.box2 {
+    &::after {
+        content: "Less嵌套文字4";
+        color: black;
+    }
+}
+
+// 4. Less运算
+// less中，任何数字、颜色、变量都可以参与运算。 加 + 减 - 乘 * 除 /
+// 注意： (1) 运算符左右得有空格隔开
+//       (2) 两个数参与运算，如果只有一个数有单位，则最后结果以有单位的数的单位为准
+//       (3) 两个数参与运算，如果只有两个数都有单位，则最后结果以第一个数的单位为准
+.box3 {
+    width: 200px * 2;
+    height: 200px * 3;
+    border: @font14 @color2 solid;
+    color: @color1;
+    background-color: gray;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <!-- PS：伪类选择器的特点 “ ：” -->
+    <style>
+        /* 1,选取父元素ul中第一个子元素li */
+        ul li:first-child {
+            background-color: aqua;
+        }
+
+        /* 2,选取父元素ul中最后一个子元素li */
+        ul li:last-child {
+            background-color: blue;
+        }
+
+        /* 3,选取父元素ul中第n个子元素li */
+        ul li:nth-child(4) {
+            color: red;
+        }
+
+        /* 3-2,:nth-child(n) 里面的n可以是数字、关键字和公式  */
+        /* 当n为关键字时：  （even偶数、odd奇数）*/
+        /* 隔行变色 */
+        .nn li:nth-child(even) {
+            background-color: gray;
+        }
+
+        .nn li:nth-child(odd) {
+            background-color: rgb(71, 62, 62);
+        }
+
+        /* 3-3,当n为公式时 */
+        /* 公式从0开始到n */
+        /* 2n：偶数、2n+1：奇数、5n：n的5倍数 */
+        /* n+5：从第5个开始、-n+5：前五个（包括第5个） */
+        .nnn li:nth-child(-n+3) {
+            /* -n+3 前三个背景色为aqua */
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- eg1 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <ol class="nn">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ol>
+    <!-- eg2 -->
+    <ol class="nnn">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ol>
+    <!-- eg3 -->
+</body>
+
+</html>

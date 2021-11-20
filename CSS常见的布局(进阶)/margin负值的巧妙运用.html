@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin负值的巧妙运用</title>
+    <!-- 当每个盒子都有边框且需要挨在一起布局时 -->
+    <!-- 其中会有两个边框挨在一起的情况,导致布局宽度width变大 -->
+    <!-- 因此需要使用margin的负值进行巧妙运用 -->
+    <style>
+        .box1,
+        .box2,
+        .box3 {
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 120px;
+            height: 200px;
+            background-color: aqua;
+            border: 2px solid black;
+        }
+
+        .box2 li {
+            /* 方法一 :       */
+            /* 因此可以利用margin负值进行边框的叠加 */
+            /* 将盒子左移1px使得 两个盒子边框叠加 */
+            margin-left: -2px;
+        }
+
+        /* 但是 */
+        /* 这样若要使得鼠标移上去时,显示边框就会有一边被压住 */
+        .box2 li:hover {
+            border-color: yellow;
+        }
+
+        /* 解决方法: */
+        /* 提高鼠标经过的那个盒子的层级即可 */
+        /* 如果没有定位则添加相对定位 */
+        /* 如果有定位则加z-index */
+        .box3 li {
+            margin-left: -2px;
+        }
+
+        .box3 li:hover {
+            position: relative;
+            /* 或者z-index: 1; */
+            border-color: yellow; 
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box1">
+        <!-- 两个盒子相挨着的地方边框为2倍 -->
+        <li>两个盒子相挨着的地方边框为2倍</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul class="box2">
+        <li>因此可以利用margin负值进行边框的叠加</li>
+        <li>将盒子左移1px使得 两个盒子边框叠加</li>
+        <li>但是</li>
+        <li>这样若要使得鼠标移上去时,显示边框就会有一边被压住</li>
+        <li>5</li>
+    </ul>
+    <ul class="box3">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+
+</html>

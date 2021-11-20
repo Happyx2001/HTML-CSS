@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复合选择器</title>
+    <style>
+        /* 后代选择器  元素1 元素2{}*/
+        .q1 p {
+            font-style: italic;
+        }
+
+        .q1 .a2 {
+            color: tomato;
+            font-size: 30px;
+        }
+
+        .q1 .x1 .x2 {
+            display: block;
+            width: 200px;
+        }
+
+        /* 子代选择器，只选择“亲儿子” 元素1>元素2 */
+        .q2>a {
+            font-size: 25px;
+        }
+
+        /* 并集选择器  元素1，元素2 {} */
+        .a3,
+        .a4 {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="q1">
+        <p class="a1">q1->a1</p>
+        <p class="a2">q1->a2</p>
+        <div class="x1">
+            <img src="images/wall2.png" class="x2">
+        </div>
+    </div>
+    <div class="q2">
+        <p class="a3"> a3 </p>
+        <p class="a4"> a4 </p>
+        <a href="#"> z1 </a>
+        <p><a href="#"> z2 </a></p>
+    </div>
+</body>
+
+</html>

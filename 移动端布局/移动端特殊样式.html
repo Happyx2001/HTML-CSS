@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端特殊样式</title>
+    <style>
+        * {
+            /* CSS3盒子模型 */
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            /* 点击高亮我们需要清除清除，设置 transparent 完成透明 */
+            -webkit-tap-highlight-color: transparent;
+            /* 在移动端浏览器默认的外观上 在ios上加上这个属性才能给按钮和输入框自定义样式 */
+            -webkit-appearance: none;
+        }
+
+        /* 禁用长按页面时的弹出菜单 */
+        img,
+        a {
+            -webkit-touch-callout: none;
+        }
+
+        /* 常用初始化样式 */
+        body {
+            margin: 0 auto;
+            min-width: 320px;
+            max-width: 640px;
+            background: #fff;
+            font-size: 14px;
+            font-family: -apple-system, Helvetica, sans-serif;
+            line-height: 1.5;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>

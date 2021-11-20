@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器案例</title>
+    <!-- 用伪元素选择器可以优化html结构 -->
+    <style>
+        /* 案例1，鼠标移到图片上去之后，产生遮罩层 */
+        .box1 {
+            /* 子绝父相 */
+            position: relative;
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        .box1 img {
+            width: 100%;
+            height: 100%;
+            /* 消除图片下边的空白缝隙 */
+            vertical-align: middle;
+        }
+
+        /* 设置遮罩层 */
+        .box1::before {
+            /* 用绝对定位放置遮罩层，不占用位置 */
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            content: '';
+        }
+
+        /* 设置鼠标移至父盒子div上时，显示出遮罩层 */
+        .box1:hover::before {
+            display: block;
+        }
+
+        /* 案例2，字体图标结合伪元素选择器的妙用 */
+        @font-face {
+            /*声明字体 引用字体*/
+            /* 复制粘贴即可 */
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot');
+            src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.woff') format('woff'),
+                url('fonts/icomoon.ttf') format('truetype'),
+                url('fonts/icomoon.svg#SofiaProLight') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        /* ps1：不使用伪元素选择器的做法 */
+        .box2 {
+            position: relative;
+            border: 1px solid red;
+            height: 100px;
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        .box2 div {
+            position: absolute;
+            top: 25px;
+            right: 10px;
+            font-family: 'icomoon';
+            font-size: 50px;
+            color: red;
+        }
+
+        /* ps2：使用伪元素选择器的做法 */
+        .box3 {
+            position: relative;
+            border: 1px solid red;
+            height: 100px;
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        .box3::after {
+            position: absolute;
+            top: 25px;
+            right: 10px;
+            font-family: 'icomoon';
+            font-size: 50px;
+            color: red;
+            content: "";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <img src="../HTML基础标签/images/wall1.png" alt="">
+    </div>
+    <div class="box2">
+        <div></div>
+    </div>
+    <div class="box3">
+    </div>
+</body>
+
+</html>

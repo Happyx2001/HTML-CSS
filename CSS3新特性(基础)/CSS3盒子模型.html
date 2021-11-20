@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3盒子模型</title>
+    <!-- box-sizing: ;  -->
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 10px solid black;
+            /* box-sizing: content-box;为默认选项 */
+            /* 盒子实际大小等于盒子高、宽加边框大小px */
+            /* 盒子大小=width/height+padding+border */
+            box-sizing: content-box;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border: 10px solid black;
+            /* box-sizing: border-box;CSS3盒子模型 */
+            /* 使得盒子实际大小就是设定的高、宽(width、height) */
+            /* 盒子大小=width/height */
+            /* 使得padding、border不会撑大盒子 */
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box1">以前的盒子模型加边框</div>
+    <div class="box2">CSS3盒子模型</div>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画练习案例1</title>
+    <!-- 波纹圆点 -->
+    <!-- 本质是几个盒子叠加在一块，一个圆点盒子和多个波纹盒子 -->
+    <!-- 运用绝对定位叠加，波纹盒子设置边框以及阴影 -->
+    <!-- 只需要设置动画让波纹盒子高宽改变，并且让不同的波纹盒子延迟播放
+        即可实现波纹的效果 -->
+    <style>
+        /* 设置父盒子 */
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+        }
+
+        /* 设置圆点 */
+        .point {
+            /* 子绝父相 */
+            position: absolute;
+            /* 让point在父盒子中垂直水平居中 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: deepskyblue;
+            /* 让其变为圆形 border-radius: 50%; */
+            border-radius: 50%;
+        }
+
+        /* 设置波纹动画的基本属性 */
+        /* 伪元素选择器选择类以pulse开头的div元素 */
+        .box div[class^="pulse"] {
+            position: absolute;
+            /* 让pulse在父盒子中垂直水平居中 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            box-shadow: 0 0 12px deepskyblue;
+            border-radius: 50%;
+            /* 调用动画 bowen */
+            animation-name: bowen;
+            /* 设置持续时间 */
+            animation-duration: 1.2s;
+            /* 设置播放曲线：linear 匀速 */
+            animation-timing-function: linear;
+            /* 设置播放次数：infinite 无限 */
+            animation-iteration-count: infinite;
+            /* 简写如下*/
+            /* animation: bowen 1.2s linear infinite; */
+        }
+
+        /* 第一道波纹默认0s开始播放 */
+        /* 设置第二道波纹，延迟0.4s播放 */
+        .box .pulse2 {
+            animation-delay: 0.4s;
+        }
+
+        /* 设置第三道波纹，延迟0.8s播放 */
+        .box .pulse3 {
+            animation-delay: 0.8s;
+        }
+
+        /* 定义动画bowen */
+        @keyframes bowen {
+            0% {}
+
+            50% {
+                width: 40px;
+                height: 40px;
+                /* opacity元素的不透明级别 默认为：1 不透明 */
+                opacity: 1;
+            }
+
+            100% {
+                width: 60px;
+                height: 60px;
+                /* opacity: 0; 表示元素透明 */
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="point"></div>
+        <div class="pulse1"></div>
+        <div class="pulse2"></div>
+        <div class="pulse3"></div>
+    </div>
+</body>
+
+</html>

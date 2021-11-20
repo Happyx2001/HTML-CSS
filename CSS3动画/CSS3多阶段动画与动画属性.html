@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多阶段动画与动画属性</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+            /* 调用动画 、常用动画属性*/
+            /* 调用动画名称 (必写)*/
+            animation-name: move;
+
+            /* 动画持续时间(必写) */
+            animation-duration: 2s;
+
+            /* 规定动画重复的次数 (默认1次，infinite:无限) */
+            animation-iteration-count: infinite;
+
+            /* 规定动画的速度曲线 (默认为ease) */
+            /* 也可以写step() 步长，动画分阶段显示 */
+            animation-timing-function: ease;
+
+            /* 规定动画何时开始(是否延迟播放、默认为0) */
+            animation-delay: 0;
+
+            /* 规定动画是否在下一周期逆播放(默认为normal、逆播放为alternate) */
+            animation-direction: alternate;
+
+            /* 规定动画是否正在运行或暂停(默认running、还有pause) */
+            animation-play-state: running;
+
+            /* 规定动画结束后的状态(保持:forwards、回到起始:backwards) */
+            animation-fill-mode: forwards;
+
+            /* 简写： */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation: move 2s ease 0s infinite alternate forwards; */
+        }
+
+        /* 规定鼠标在放上div时动画停止，移开继续 */
+        div:hover {
+            animation-play-state: paused;
+        }
+
+        /* 动画序列 */
+        /* 1. 可以做多个状态的变化, keyflame 关键帧 */
+        /* 2. 里面的百分比得是整数 */
+        /* 3. 里面的百分比就是总时间的划分 */
+        /* eg：总时间是2s，所以25%代表2*25%=0.5s时动画的状态 */
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(1000px, 0);
+            }
+
+            50% {
+                transform: translate(1000px, 1000px);
+            }
+
+            75% {
+                transform: translate(0, 1000px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

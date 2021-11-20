@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>less的使用</title>
+    <style>
+        /* CSS的弊端：
+            1. CSS需要书写大量看似没有逻辑的代码、CSS沉余度比较高
+            2. 不方便维护及拓展、不利于重复使用
+            3. CSS没有很好的计算能力 */
+
+        /* Less：
+            1. Less是一门CSS拓展语言、也称为CSS预处理器
+            2. 在CSS的原有语法上，给CSS加入了程序式语言的特性
+            3. 在CSS的语法基础之上，引入了变量、运算、函数，大大简化了CSS的编写，并且降低了CSS的维护成本 */
+    </style>
+    <!-- 引入less 编译后的 css ↓ -->
+    <link rel="stylesheet" href="less.css">
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2">
+        <a href="#">Less嵌套文字1</a>
+        <br>
+        <a href="#" class="a1">Less嵌套文字2</a>
+        <br>
+        <a href="#" class="a2">Less嵌套文字3</a>
+        <br>
+    </div>
+    <div class="box3"></div>
+</body>
+
+</html>

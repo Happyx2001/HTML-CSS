@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5新增多媒体标签</title>
+    <!-- 视频标签videos 音频标签audio -->
+</head>
+
+<body>
+    <!--视频最好是MP4格式的，MP4格式兼容很多浏览器 -->
+    <!--video 属性： 
+        src=""视频地址，谷歌浏览器需要添加muted解决自动播放的问题
+        autoplay="autoplay"视频就绪自动播放 
+        controls="controls" 向用户显示播放控件
+        width,height 设置视频的高宽
+        loop="loop" 设置视频是否自动循环播放
+        preload="auto" 规定是否预先加载视频（若有autoplay，则忽略）
+        poster=" " 加载时等待的画面图片地址
+        muted="muted" 静音播放 
+        可以直接写属性值，但不提倡 -->
+    <video src="#" autoplay="autoplay" controls="controls" width="100px" height="100px" loop="loop" preload="auto"
+        poster="#" muted="muted">
+        <!-- 添加sourc表示：以下若mp4格式不行，则使用ogg格式的视频 -->
+        <!-- 考虑兼容性才需要添加 -->
+        <source src="#.mp4" type="video/mp4">
+        <source src="#.ogg" type="video/ogg">
+    </video>
+
+
+    <!--音频最好是MP3格式的，MP3格式兼容很多浏览器 -->
+    <!--audio 属性：
+        src="" 音频地址，谷歌浏览器需要添加muted解决自动播放的问题
+        autoplay="autoplay"音频就绪自动播放 
+        controls="controls" 向用户显示播放控件 
+        loop="loop" 设置视频是否自动循环播放-->
+    <audio src="#" autoplay="autoplay" controls="controls">
+        <!-- 添加sourc表示：以下若mp3格式不行，则使用ogg格式的音频 -->
+        <!-- 考虑兼容性才需要添加 -->
+        <source src="#.mp3" type="video/mp3">
+        <source src="#.ogg" type="video/ogg">
+    </audio>
+
+</body>
+
+</html>

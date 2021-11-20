@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角的制作</title>
+    <!-- 三角的本质是边框 -->
+    <style>
+        .box1 {
+            margin: 100px auto;
+
+            width: 0;
+            height: 0;
+            /* 下面两行为照顾兼容性 */
+            line-height: 0;
+            tab-size: 0;
+            border: 50px solid transparent;
+            border-top-color: brown;
+        }
+
+        /* 制作三角的本质👇 */
+        .box2 {
+            margin: 100px auto;
+
+            width: 0;
+            height: 0;
+            /* 下面两行为照顾兼容性 */
+            line-height: 0;
+            tab-size: 0;
+            border-top: 50px solid red;
+            border-left: 50px solid blue;
+            border-right: 50px solid yellow;
+            border-bottom: 50px solid gray;
+        }
+
+        .box3,
+        .box4 {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+            margin: 20px auto;
+        }
+
+        /* 侧边三角的制作 */
+        .box3 span {
+            position: absolute;
+            right: 30px;
+            top: -20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-bottom-color: pink;
+        }
+
+        .box4 span {
+            position: absolute;
+            top: 30px;
+            right: -20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-left-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">
+        <span></span>
+    </div>
+    <div class="box4">
+        <span></span>
+    </div>
+</body>
+
+</html>

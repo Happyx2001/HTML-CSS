@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子翻面</title>
+    <!-- 处理思路 -->
+    <!-- 1. 先设置一个大的父盒子, 再设置两个子盒子, 让两个子盒子叠在一起 -->
+    <!-- 2. 让第二个子盒子翻个面rotate3d 位于第一个子盒子下面 -->
+    <!-- 3. 旋转父盒子可以看到背面的子盒子 -->
+    <style>
+        /* 给盒子们添加透视效果 */
+        body {
+            perspective: 200px;
+        }
+
+        .bbox {
+            /* 给子盒子保留3D空间 */
+            transform-style: preserve-3d;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transition: all 1s;
+        }
+
+        /* 设置鼠标放上去时, bbox绕y轴旋转180deg */
+        .bbox:hover {
+            transform: rotateY(180deg);
+        }
+
+        .box1,
+        .box2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            line-height: 200px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            border-radius: 50%;
+        }
+
+        .box1 {
+            background-color: red;
+            /* 设置未旋转父盒子时, box1在上面 */
+            z-index: 1;
+            /* 防止两个图片重叠在一起时, 旋转产生抽搐现象 */
+            /* 因此给其中一个盒子加Z轴高度, 防止抽搐 */
+            transform: translateZ(1px);
+        }
+
+        .box2 {
+            background-color: blue;
+            /* 让box2翻个面 */
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bbox">
+        <div class="box1">自古红蓝</div>
+        <div class="box2">出CP!</div>
+    </div>
+</body>
+
+</html>

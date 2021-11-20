@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3滤镜、calc</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 350px;
+            margin: 100px auto;
+        }
+
+        /* 滤镜：filter: 函数() */
+        /* 函数()-> blur(数值) 模糊处理 数值越大越模糊 */
+        img {
+            width: 100%;
+            filter: blur(5px);
+        }
+
+        /* 设定鼠标移到图标上时，取消模糊处理 */
+        img:hover {
+            filter: blur(0);
+        }
+
+        /* calc函数用法： */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+
+        /* 1,width：calc(150px + 30px); */
+        /* width属性的值为150px+30px=180px */
+        .box2 {
+            width: calc(150px + 30px);
+            height: 30px;
+            background-color: aqua;
+        }
+        /* 2,width: calc(100% - 30px); */
+        /* width属性的值为父元素width的100%再-30px */
+        .box3 {
+            width: calc(100% + 30px);
+            height: 30px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../HTML基础标签/images/wall2.png" alt="">
+    </div>
+
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+
+</html>

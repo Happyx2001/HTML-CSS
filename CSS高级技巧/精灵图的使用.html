@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图的使用</title>
+    <style>
+        .box {
+            float: left;
+        }
+
+        /* 使用方法： */
+        /* 本质上是移动显示在盒子里的精灵图 */
+        /* 通过改变精灵图的位置和盒子大小，显示不同的图 */
+        .box1 {
+            width: 60px;
+            height: 60px;
+            margin: 100px auto;
+            background-image: url(images/sprites.png);
+            /* background-position: x y  表示在精灵图上移动的位置 */
+            /* -128px 0 表示背景图（精灵图）向左移动128px 向上下移动0px */
+            background-position: -182px 0;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/sprites.png" alt="">
+        👈这是原图
+    </div>
+    <div class="box1">
+    </div>
+</body>
+
+</html>

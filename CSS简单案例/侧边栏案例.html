@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侧边栏实验</title>
+    <style>
+        /* 1，将a转换为行内块元素 */
+        div a {
+            /* 使得链接标签由行内标签转换为行内块标签 */
+            display: block;
+            /* 设置“块”的宽度为200px */
+            width: 200px;
+            /* 设置“块”的高度为50px */
+            height: 50px;
+            /* 设置背景颜色为 pink 色 */
+            background-color: #55585a;
+            /* 设置字体大小为20px */
+            font-size: 20px;
+            /* 设置字体颜色为white */
+            color: white;
+            /* 设置字体装饰为none（默认），不过此处为链接标签，故去掉了下划线 */
+            text-decoration: none;
+            /* 设置字体位置为“块”的水平垂直位置 */
+            text-align: center;
+            /* 设置行间距为50px */
+            line-height: 50px;
+
+            /* 行高与盒子高度相同即可垂直居中 */
+        }
+
+        .b:hover {
+            color: pink;
+        }
+
+        /* 2，规定鼠标在链接上悬浮时变色 */
+        div a:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="b"><a herf="https://www.bilibili.com">bilibili导航侧边栏</a></h1>
+    <div>
+        <a href="https://www.bilibili.com/v/douga" target="_blank">动画</a>
+        <a href="https://www.bilibili.com/anime" target="_blank">番剧</a>
+        <a href="#">国创</a>
+        <a href="#">舞蹈</a>
+        <a href="#">游戏</a>
+        <a href="#">知识</a>
+        <a href="#">数码</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角的巧妙运用</title>
+    <style>
+        /* 设置一个直角三角形 */
+        /* 初始↓ */
+        .box1 {
+            float: left;
+            margin-right: 50px;
+            border-top: 50px solid red;
+            border-left: 50px solid blue;
+            border-bottom: 50px solid yellow;
+            border-right: 50px solid teal;
+        }
+
+        /* 1,删除下边框 */
+        .box2 {
+            float: left;
+            margin-right: 50px;
+            border-top: 50px solid red;
+            border-left: 50px solid blue;
+            border-bottom: 0 solid yellow;
+            border-right: 50px solid teal;
+        }
+
+        /* 2,将上边框宽度调大 */
+        .box3 {
+            float: left;
+            margin-right: 50px;
+            border-top: 100px solid red;
+            border-left: 50px solid blue;
+            border-bottom: 0 solid yellow;
+            border-right: 50px solid teal;
+        }
+
+        /* 3,左边框宽度页设置为0,且右边框颜色设置为透明 */
+        .box4 {
+            float: left;
+            margin-right: 50px;
+            border-top: 100px solid red;
+            border-left: 0 solid blue;
+            border-bottom: 0 solid yellow;
+            border-right: 50px solid transparent;
+        }
+
+        /* 简易写法 */
+        .box {
+            float: left;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: red transparent yellow blue;
+            border-width: 100px 50px 0 0;
+        }
+
+        /* 简单案例 */
+        .eg {
+            margin: 100px auto;
+            width: 150px;
+            height: 30px;
+            border: 1px solid red;
+        }
+
+        .eg .less {
+            position: relative;
+            float: left;
+            height: 100%;
+            width: 90px;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background-color: red;
+
+        }
+
+        .less i {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent white transparent transparent;
+            border-width: 30px 15px 0 0;
+        }
+
+        .eg .more {
+            height: 30px;
+            color: gray;
+            font-size: 12px;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: line-through;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box"></div>
+    <br>
+    <!-- 简单JD价格秒杀标签  -->
+    <div class="eg">
+        <span class="less">
+            $1000
+            <i></i>
+        </span>
+
+        <span class="more">$1500</span>
+    </div>
+</body>
+
+</html>

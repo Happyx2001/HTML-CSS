@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型练习--案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .box {
+            background-color: #fff;
+            width: 298px;
+            height: 415px;
+            margin: 200px auto;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: aqua;
+        }
+
+        .a1 {
+            height: 50px;
+            font-size: 14px;
+            margin-top: 30px;
+            padding: 0 28px;
+        }
+
+        .a2 {
+            font-size: 14px;
+            margin-top: 100px;
+            padding: 0 28px;
+        }
+
+        .a2 {
+            color: #b0b0b0;
+        }
+
+        .a3 {
+            padding: 0 28px;
+        }
+
+        .a3 strong {
+            margin: 0 10px 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../CSS简单案例/images/wall1.png" alt="">
+        <p class="a1">bilibli干杯!</p>
+        <div class="a2">来自于:xxxxxxxxxxx</div>
+        <div class="a3">
+            <a href="https://www.bilibili.com" target="_blank">点击此处去往bilibili
+                <strong>|</strong>
+                <span>干杯🍻</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

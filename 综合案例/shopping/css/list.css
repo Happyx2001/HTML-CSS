@@ -1,0 +1,56 @@
+/* 列表特有的css样式 */
+/* 秒杀sk模块 */
+.nav {
+    overflow: hidden;
+}
+.sk {
+    position: absolute;
+    top: 40px;
+    left: 190px;
+    border-left: 1px solid #c81523;
+    padding: 3px 0 0 14px;
+}
+.sk_list ul li {
+    float: left;
+}
+.sk_list ul li a {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    line-height: 47px;
+    padding: 0 30px;
+}
+.sk_con ul li {
+    float: left;
+}
+.sk_con ul li a {
+    display: block;
+    font-size: 14px;
+    line-height: 49px;
+    padding: 0 20px;
+}
+.sk_con ul li:last-child a::after {
+    content: '\e916';
+    font-family: 'icomoon';
+    line-height: 49px;
+} 
+/* 列表页主体sk_container模块 */
+.sk_bd ul {
+    overflow: hidden;
+}
+.sk_bd ul li {
+    /* 防止li里面的img盖住盒子，导致边框看不见 */
+    overflow: hidden;
+    float: left;
+    width: 290px;
+    height: 460px;
+    margin-right: 13px;
+    border: 1px solid transparent;
+}
+.sk_bd ul li:nth-child(4n) {
+    margin-right: 0px;
+}
+.sk_bd ul li:hover {
+    border: 1px solid #c81523;
+}
